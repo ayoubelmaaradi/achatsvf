@@ -1,0 +1,19 @@
+<h2>Creating vendors</h2>
+<div class="row">
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Create vendor form</div>
+    </div>
+    <div class="card-body">
+      <label for="id">Id</label>
+      <input class="form-control" name="id" type="number" id="id" [(ngModel)]="vendor.id">
+      <label for="ref">reference</label>
+      <input class="form-control" name="reference" type="text" id="ref" [(ngModel)]="vendor.name">
+      <label for="address">Price</label>
+      <input class="form-control" name="design" type="text" id="address" [(ngModel)]="vendor.address"><br>
+      <label for="tele">Price</label>
+      <input class="form-control" name="design" type="text" id="tele" [(ngModel)]="vendor.telephone"><br>
+      <button class="btn btn-success" (click)="addVendor()">Add Product</button>
+    </div>
+  </div>
+</div>

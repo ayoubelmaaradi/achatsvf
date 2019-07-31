@@ -1,0 +1,113 @@
+<p>customer-create works!</p>
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        Customer create Form
+      </div>
+      <div class="card-body">
+        <label for="id">Id</label>
+        <input class="form-control" name="id" type="number" id="id" [(ngModel)]="customer.id">
+        <label for="ref">name</label>
+        <input class="form-control" name="reference" type="text" id="ref" [(ngModel)]="customer.name">
+        <label for="tele">tele</label>
+        <input class="form-control" name="tele" type="text" id="tele" [(ngModel)]="customer.tele"><br>
+        <label for="email">email</label>
+        <input class="form-control" name="email" type="text" id="email" [(ngModel)]="customer.email"><br>
+        <label for="adress">adress</label>
+        <input class="form-control" name="adress" type="text" id="adress" [(ngModel)]="customer.adress"><br>
+        <label for="ice">ice</label>
+        <input class="form-control" name="adress" type="text" id="ice" [(ngModel)]="customer.ice"><br>
+        <button class="btn btn-success" (click)="addCustomer()">Add Customer</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <table class="table-bordered table">
+      <thead>
+      <th>id</th>
+      <th>name</th>
+      <th>tele</th>
+      <th>email</th>
+      <th>adress</th>
+      <th>ice</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let com of customers">
+        <td>{{ com.id }}</td>
+        <td>{{ com.name }}</td>
+        <td>{{ com.tele }}</td>
+        <td>{{ com.email }}</td>
+        <td>{{ com.adress}}</td>
+        <td>{{ com.ice}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Most relevant customer</div>
+        <div class="card-body">This is small info about this customer</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Most relevant customer</div>
+        <div class="card-body">This is small info about this customer</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Most relevant customer</div>
+        <div class="card-body">This is small info about this customer</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Most relevant customer</div>
+        <div class="card-body">This is small info about this customer</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Most relevant customer</div>
+        <div class="card-body">This is small info about this customer</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Most relevant customer</div>
+        <div class="card-body">This is small info about this customer</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Most relevant customer</div>
+        <div class="card-body">This is small info about this customer</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Most relevant customer</div>
+        <div class="card-body">This is small info about this customer</div>
+      </div>
+    </div>
+  </div>
+</div>

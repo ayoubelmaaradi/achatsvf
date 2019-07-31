@@ -1,0 +1,51 @@
+<h2>Creating products:</h2>
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Product create Form</h3>
+      </div>
+      <div class="card-body">
+        <label for="id">Id</label>
+        <input class="form-control" name="id" type="number" id="id" [(ngModel)]="product.id">
+        <label for="ref">reference</label>
+        <input class="form-control" name="reference" type="text" id="ref" [(ngModel)]="product.reference">
+        <label for="design">Price</label>
+        <input class="form-control" name="design" type="text" id="design" [(ngModel)]="product.price"><br>
+        <select class="form-control" name="" id="">
+          <option value="">Vendor 1</option>
+          <option value="">Vendor 2</option>
+          <option value="">Vendor 3</option>
+          <option value="">Vendor 4</option>
+          <option value="">Vendor 5</option>
+          <option value="">Vendor 6</option>
+          <option value="">Vendor 7</option>
+        </select>
+        <button class="btn btn-success" (click)="addProduct()">Add Product</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Client informations</h3>
+      </div>
+      <div class="card-body">
+        <table class="table-bordered table">
+          <thead>
+          <th>id</th>
+          <th>reference</th>
+          <th>price</th>
+          </thead>
+          <tbody>
+          <tr *ngFor="let com of products">
+            <td>{{ com.id }}</td>
+            <td>{{ com.reference }}</td>
+            <td>{{ com.price }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
