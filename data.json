@@ -1,0 +1,178 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "reference": "T1245Uio",
+      "name": "Toniko",
+      "vendor": {
+        "id": 1,
+        "name": "ikram",
+        "type": "individuel",
+        "adress": "tabger 9000",
+        "website": "ikram.com",
+        "phone": "061598986",
+        "mobile": "+3332664",
+        "fax": "184956",
+        "email": "ikram.bouras96@gmail.com",
+        "language": "english"
+      },
+      "unitemesure": "cm"
+    },
+    {
+      "id": 2,
+      "reference": "78787AOII",
+      "name": "Name",
+      "price": "041.00",
+      "vendor": "",
+      "unitemesure": "m"
+    },
+    {
+      "id": 3,
+      "reference": "78787AOII",
+      "name": "Name",
+      "price": "041.00",
+      "vendor": "",
+      "unitemesure": "m"
+    },
+    {
+      "id": 4,
+      "reference": "TFRF98955",
+      "name": "Name",
+      "price": "078845.00",
+      "vendor": "",
+      "unitemesure": "Piece"
+    },
+    {
+      "id": 5,
+      "reference": "878787",
+      "name": "lolo888778",
+      "price": 0,
+      "vendor": {
+        "id": 1,
+        "name": "ikram",
+        "type": "individuel",
+        "adress": "tabger 9000",
+        "website": "ikram.com",
+        "phone": "061598986",
+        "mobile": "+3332664",
+        "fax": "184956",
+        "email": "ikram.bouras96@gmail.com",
+        "language": "english"
+      },
+      "unitemesure": "Piece"
+    },
+    {
+      "id": 6,
+      "reference": "878787",
+      "name": "54544",
+      "price": 0,
+      "vendor": {
+        "id": 1,
+        "name": "ikram",
+        "type": "individuel",
+        "adress": "tabger 9000",
+        "website": "ikram.com",
+        "phone": "061598986",
+        "mobile": "+3332664",
+        "fax": "184956",
+        "email": "ikram.bouras96@gmail.com",
+        "language": "english"
+      },
+      "unitemesure": "m"
+    },
+    {
+      "id": 7,
+      "reference": "878787",
+      "name": "4444",
+      "price": 0,
+      "vendor": "",
+      "unitemesure": "m"
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "blabla",
+      "tele": "061501222",
+      "email": "ikram@blabla",
+      "adress": "rue jhjkklj 9000",
+      "ice": "R215UBL"
+    },
+    {
+      "id": 2,
+      "name": "noklla",
+      "tele": "061501222",
+      "email": "jjj@blabla",
+      "adress": "rue jhjkklj 9000",
+      "ice": "R215UBL"
+    },
+    {
+      "id": 522,
+      "name": "testing",
+      "tele": "06444565454",
+      "email": "email@email.com",
+      "adress": "tanger tanf=ger",
+      "ice": "egreg454646"
+    },
+    {
+      "id": 18,
+      "name": "nklml",
+      "tele": "457899",
+      "email": "aymane.aymane11@gmail.com",
+      "adress": "ruriiljnmo",
+      "ice": "kl,m,"
+    }
+  ],
+  "orders": [
+    {
+      "id": 3,
+      "status": "holala",
+      "dateOrdering": "45/15/18"
+    },
+    {
+      "id": 4,
+      "status": "fff",
+      "dateOrdering": "ffff"
+    }
+  ],
+  "orderItems": [
+    {
+      "id": 3,
+      "qte": 5000,
+      "product": "",
+      "order": ""
+    },
+    {
+      "id": 3,
+      "qte": 5000,
+      "product": "",
+      "order": ""
+    }
+  ],
+  "vendors": [
+    {
+      "id": 1,
+      "name": "ikram",
+      "type": "individuel",
+      "adress": "tabger 9000",
+      "website": "ikram.com",
+      "phone": "061598986",
+      "mobile": "+3332664",
+      "fax": "184956",
+      "email": "ikram.bouras96@gmail.com",
+      "language": "english"
+    },
+    {
+      "id": 2,
+      "name": "ikram",
+      "type": "Individuel",
+      "adress": "",
+      "website": "ikram.ikoiko.com",
+      "phone": "061501401236",
+      "mobile": "+9874562312",
+      "fax": "",
+      "email": "bourase.bourase17@gmail.com",
+      "language": ""
+    }
+  ]
+}

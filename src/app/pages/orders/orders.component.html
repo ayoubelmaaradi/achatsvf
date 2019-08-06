@@ -1,0 +1,41 @@
+<h1>Creating orders:</h1>
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Order create Form</h3>
+      </div>
+      <div class="card-body">
+        <label for="id">Id</label>
+        <input class="form-control" name="id" type="number" id="id" [(ngModel)]="order.id">
+        <label for="status">status</label>
+        <input class="form-control" name="status" type="text" id="status" [(ngModel)]="order.status">
+        <label for="dateOrdering">dateOrdering</label>
+        <input class="form-control" name="dateOrdering" type="text" id="dateOrdering"
+               [(ngModel)]="order.dateOrdering"><br>
+        <button class="btn btn-success" (click)="addOrder()">Add Order</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header"><h3 class="card-title">Orders detail</h3></div>
+      <div class="card-body">
+        <table class="table-bordered table">
+          <thead>
+          <th>id</th>
+          <th>status</th>
+          <th>DateOrdering</th>
+          </thead>
+          <tbody>
+          <tr *ngFor="let com of orders">
+            <td>{{ com.id }}</td>
+            <td>{{ com.status}}</td>
+            <td>{{ com.dateOrdering}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

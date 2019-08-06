@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">New Product</h3>
+      </div>
+      <div class="card-body">
+        <label for="reference">reference</label>
+        <input class="form-control" name="reference" type="text" id="reference" [(ngModel)]="product.reference">
+        <label for="name">name</label>
+        <input class="form-control" name="name" type="text" id="name" [(ngModel)]="product.name">
+        <label for="design">Price</label>
+        <input class="form-control" name="design" type="text" id="design" [(ngModel)]="product.price"><br>
+        <label for="unitemesure">Unite mesure</label>
+        <select class="form-control"  name="unitemesure" id="unitemesure" [(ngModel)]="product.unitemesure">
+          <option value="Piece">Piece</option>
+          <option value="m">m</option>
+          <option value="L">L</option>
+          <option value="Kg">Kg</option>
+        </select>
+        <p-dialog header="Godfather I" [(visible)]="display" [modal]="true" [responsive]="true" [style]="{width: '350px', minWidth: '200px'}" [minY]="70"
+                  [maximizable]="true" [baseZIndex]="10000">
+          <div class="col-md-12">
+            <div class="card card-user">
+              <p-table [columns]="cols1" [value]="vendors" selectionMode="single" [(selection)]="selectedVendor" (onRowSelect)="onRowSelect($event)" [paginator]="true" [rows]="15">
+                <ng-template pTemplate="caption">
+                  List of Vendors
+                </ng-template>
+                <ng-template pTemplate="header" let-columns>
+                  <tr>
+                    <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                      {{col.header}}
+                      <p-sortIcon [field]="col.field"></p-sortIcon>
+                    </th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData let-columns="columns">
+                  <tr [pSelectableRow]="rowData">
+                    <td *ngFor="let col of columns">
+                      {{rowData[col.field]}}
+                    </td>
+                  </tr>
+                </ng-template>
+              </p-table>
+            </div>
+          </div>
+          <p-footer>
+            <button type="button" pButton icon="pi pi-check" (click)="display=false" label="Yes"></button>
+            <button type="button" pButton icon="pi pi-close" (click)="display=false" label="No" class="ui-button-secondary"></button>
+          </p-footer>
+        </p-dialog>
+        <div class="row">
+          <div class="col-md-6">
+        <button type="button" (click)="showDialog()" pButton icon="pi pi-plus" label="Add Vendor"></button>
+          </div>
+        </div>
+        <button class="btn btn-success" (click)="addProduct()">Add Product</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

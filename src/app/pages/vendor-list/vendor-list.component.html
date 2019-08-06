@@ -1,0 +1,107 @@
+<div class="col-md-12">
+  <div class="card card-user">
+    <p-table [columns]="cols" [value]="vendors" selectionMode="single" [(selection)]="selectedVendor" (onRowSelect)="onRowSelect($event)" [paginator]="true" [rows]="15">
+  <ng-template pTemplate="caption">
+    List of Vendors
+  </ng-template>
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+        {{col.header}}
+        <p-sortIcon [field]="col.field"></p-sortIcon>
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData let-columns="columns">
+    <tr [pSelectableRow]="rowData">
+      <td *ngFor="let col of columns">
+        {{rowData[col.field]}}
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+  </div>
+</div>
+
+<p-dialog header="Customer Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true"  [style]="{width: '300px'}">
+  <div class="ui-g ui-fluid" *ngIf="vendor">
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="id">id</label>
+      </div>
+      <div class="ui-g-2">
+        <input pInputText id="id" [(ngModel)]="vendor.id" />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="name">name</label>
+      </div>
+      <div class="ui-g-8">
+        <input pInputText id="name" [(ngModel)]="vendor.name" />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="type">type</label>
+      </div>
+      <div class="ui-g-8">
+        <input pInputText id="type" [(ngModel)]="vendor.type" />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="email">email</label>
+      </div>
+      <div class="ui-g-8">
+        <input pInputText id="email" [(ngModel)]="vendor.email" />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="adress">adress</label>
+      </div>
+      <div class="ui-g-8">
+        <input pInputText id="adress" [(ngModel)]="vendor.adress" />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="website">website</label>
+      </div>
+      <div class="ui-g-8">
+        <input pInputText id="website" [(ngModel)]="vendor.website" />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="phone">phone</label>
+      </div>
+      <div class="ui-g-8">
+        <input pInputText id="phone" [(ngModel)]="vendor.phone" />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="fax">fax</label>
+      </div>
+      <div class="ui-g-8">
+        <input pInputText id="fax" [(ngModel)]="vendor.fax" />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="website">mobile</label>
+      </div>
+      <div class="ui-g-8">
+        <input pInputText id="mobile" [(ngModel)]="vendor.mobile" />
+      </div>
+    </div>
+  </div>
+  <p-footer>
+    <div class="ui-dialog-buttonpane ui-helper-clearfix">
+      <button type="button" pButton icon="pi pi-trash" (click)="delete()" label="Delete"></button>
+      <button type="button" pButton icon="pi pi-check" (click)="save()" label="Save"></button>
+    </div>
+  </p-footer>
+</p-dialog>

@@ -1,0 +1,109 @@
+<div class="col-md-12">
+  <div class="card card-user">
+    <div class="card-header">
+      <h5 class="card-title">New Vendor</h5>
+      <div align="right">
+      <button class="btn btn-success" label="Success" routerLink="/Listvendors" >View Vendors</button>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-5 pr-1">
+          <div class="form-group">
+            <label>Type</label>
+            <div class="ui-g" style="width:250px;margin-bottom:10px">
+              <div class="ui-g-12"><p-radioButton name="group1" value="Individuel" label="Individuel" [(ngModel)]="vendor.type" inputId="opt1"></p-radioButton></div>
+              <div class="ui-g-12"><p-radioButton name="group1" value="Company" label="Company" [(ngModel)]="vendor.type" inputId="opt2"></p-radioButton></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!--          <div class="col-md-5 pr-1">-->
+        <!--            <div class="form-group">-->
+        <!--              <label>Id-Vendor</label>-->
+        <!--              <input class="form-control" name="id" type="number" id="id" [(ngModel)]="vendor.id">-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <div class="col-md-6 pr-1">
+          <div class="form-group">
+            <label>Name</label>
+            <input class="form-control" name="name" type="text" id="name" [(ngModel)]="vendor.name">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 pr-1">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input class="form-control" name="email" type="text" id="email" [(ngModel)]="vendor.email">
+          </div>
+        </div>
+        <div class="col-md-6 pl-1">
+          <div class="form-group">
+            <label>Web Site </label>
+            <input type="text" class="form-control" placeholder="website" [(ngModel)]="vendor.website">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 pr-1">
+          <div class="form-group">
+            <label for="phone">phone</label>
+            <input class="form-control" name="email" type="text" id="phone" [(ngModel)]="vendor.phone">
+          </div>
+        </div>
+        <div class="col-md-6 pl-1">
+          <div class="form-group">
+            <label>mobile</label>
+            <input type="text" class="form-control" placeholder="mobile" [(ngModel)]="vendor.mobile">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Address</label>
+            <input type="text" class="form-control" placeholder="Home Address" value="Melbourne, Australia">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 pr-1">
+          <div class="form-group">
+            <label>City</label>
+            <input type="text" class="form-control" placeholder="City">
+          </div>
+        </div>
+        <div class="col-md-4 px-1">
+          <div class="form-group">
+            <label>Country</label>
+            <input type="text" class="form-control" placeholder="Country" >
+          </div>
+        </div>
+        <div class="col-md-4 pl-1">
+          <div class="form-group">
+            <label>Postal Code</label>
+            <input type="number" class="form-control" placeholder="ZIP Code">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>about you</label>
+            <textarea
+              class="form-control textarea"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="update ml-auto mr-auto">
+          <p-toast></p-toast>
+          <button class="btn btn-success" label="Success" (click)="addVendor()">create</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
