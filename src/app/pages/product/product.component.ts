@@ -14,7 +14,7 @@ import {MessageService} from 'primeng/api';
 export class ProductComponent implements OnInit {
 
   displayDialog: boolean;
-  private product: Product = new Product(0, '878787', '', 0.00, new Vendor(0, '', '', '', '', '', '', '', '', ''), '');
+  private product: Product = new Product(0, '', '', 0.00, new Vendor(0, '', '', '', '', '', '', '', '', ''), '');
   private products: Product[];
   selectedVendor: Vendor;
   private vendors: Vendor[];
@@ -61,10 +61,10 @@ export class ProductComponent implements OnInit {
 
   public addProduct() {
     // tslint:disable-next-line:max-line-length
-    this.products.push(new Product(this.product.id, this.product.reference, this.product.name, this.product.price, this.vendor, this.product.unitemesure));
+    this.products.push(new Product(this.product.id, this.product.reference, this.product.name, this.product.price, this.selectedVendor, this.product.unitemesure));
     console.log(this.product);
     // tslint:disable-next-line:max-line-length
-    this.productService.createProduct(new Product(this.product.id, this.product.reference, this.product.name, this.product.price, this.vendor, this.product.unitemesure)).subscribe();
+    this.productService.createProduct(new Product(this.product.id, this.product.reference, this.product.name, this.product.price, this.selectedVendor, this.product.unitemesure)).subscribe();
   }
 
   public addProduct1() {

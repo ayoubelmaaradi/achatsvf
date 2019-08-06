@@ -18,7 +18,7 @@
           <option value="L">L</option>
           <option value="Kg">Kg</option>
         </select>
-        <p-dialog header="Godfather I" [(visible)]="display" [modal]="true" [responsive]="true" [style]="{width: '350px', minWidth: '200px'}" [minY]="70"
+        <p-dialog header="Godfather I" [(visible)]="display" [modal]="true" [responsive]="true" [style]="{width: '900px', minWidth: '600px'}" [minY]="70"
                   [maximizable]="true" [baseZIndex]="10000">
           <div class="col-md-12">
             <div class="card card-user">
@@ -40,6 +40,11 @@
                       {{rowData[col.field]}}
                     </td>
                   </tr>
+                </ng-template>
+                <ng-template pTemplate="summary">
+                  <div style="text-align: left">
+                    Selected Car: {{selectedVendor ?selectedVendor.email + ' - ' + selectedVendor.mobile+ ' - ' + selectedVendor.website + ' - ' + selectedVendor.fax: 'none'}}
+                  </div>
                 </ng-template>
               </p-table>
             </div>
