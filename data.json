@@ -3,90 +3,39 @@
     {
       "id": 1,
       "reference": "T1245Uio",
-      "name": "Toniko",
+      "name": "Tonico",
       "vendor": {
         "id": 1,
-        "name": "ikram",
+        "name": "Tonoco-France",
         "type": "individuel",
-        "adress": "tabger 9000",
-        "website": "ikram.com",
+        "adress": "Ilot 26 B Bloc D1 Bureau N°1, Zone Franche d'Exportation de Tanger, Rte de Rabat Tanger",
+        "website": "www.tonico-france.fr/brands/Tonico",
         "phone": "061598986",
         "mobile": "+3332664",
         "fax": "184956",
-        "email": "ikram.bouras96@gmail.com",
+        "email": "lionelmyska@gmail.com",
         "language": "english"
       },
       "unitemesure": "cm"
     },
     {
       "id": 2,
-      "reference": "78787AOII",
-      "name": "Name",
-      "price": "041.00",
-      "vendor": "",
-      "unitemesure": "m"
-    },
-    {
-      "id": 3,
-      "reference": "78787AOII",
-      "name": "Name",
-      "price": "041.00",
-      "vendor": "",
-      "unitemesure": "m"
-    },
-    {
-      "id": 4,
-      "reference": "TFRF98955",
-      "name": "Name",
-      "price": "078845.00",
-      "vendor": "",
-      "unitemesure": "Piece"
-    },
-    {
-      "id": 5,
-      "reference": "878787",
-      "name": "lolo888778",
-      "price": 0,
+      "reference": "soko alto ",
+      "name": "lonilo",
+      "price": "1569",
       "vendor": {
-        "id": 1,
+        "id": 2,
         "name": "ikram",
-        "type": "individuel",
-        "adress": "tabger 9000",
-        "website": "ikram.com",
-        "phone": "061598986",
-        "mobile": "+3332664",
-        "fax": "184956",
-        "email": "ikram.bouras96@gmail.com",
-        "language": "english"
+        "type": "Individuel",
+        "adress": "",
+        "website": "ikram.ikoiko.com",
+        "phone": "061501401236",
+        "mobile": "+9874562312",
+        "fax": "",
+        "email": "bourase.bourase17@gmail.com",
+        "language": ""
       },
-      "unitemesure": "Piece"
-    },
-    {
-      "id": 6,
-      "reference": "878787",
-      "name": "54544",
-      "price": 0,
-      "vendor": {
-        "id": 1,
-        "name": "ikram",
-        "type": "individuel",
-        "adress": "tabger 9000",
-        "website": "ikram.com",
-        "phone": "061598986",
-        "mobile": "+3332664",
-        "fax": "184956",
-        "email": "ikram.bouras96@gmail.com",
-        "language": "english"
-      },
-      "unitemesure": "m"
-    },
-    {
-      "id": 7,
-      "reference": "878787",
-      "name": "4444",
-      "price": 0,
-      "vendor": "",
-      "unitemesure": "m"
+      "unitemesure": "L"
     }
   ],
   "customers": [
@@ -152,14 +101,14 @@
   "vendors": [
     {
       "id": 1,
-      "name": "ikram",
+      "name": "Tonoco-France",
       "type": "individuel",
-      "adress": "tabger 9000",
-      "website": "ikram.com",
+      "adress": "Ilot 26 B Bloc D1 Bureau N°1, Zone Franche d'Exportation de Tanger, Rte de Rabat Tanger",
+      "website": "www.tonico-france.fr/brands/Tonico",
       "phone": "061598986",
       "mobile": "+3332664",
       "fax": "184956",
-      "email": "ikram.bouras96@gmail.com",
+      "email": "lionelmyska@gmail.com",
       "language": "english"
     },
     {

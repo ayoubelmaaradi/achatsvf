@@ -3,12 +3,10 @@ import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {ToastrModule} from 'ngx-toastr';
 import {HttpClientModule} from '@angular/common/http';
-
 import {SidebarModule} from './sidebar/sidebar.module';
 import {FooterModule} from './shared/footer/footer.module';
 import {NavbarModule} from './shared/navbar/navbar.module';
 import {FixedPluginModule} from './shared/fixedplugin/fixedplugin.module';
-
 import {AppComponent} from './app.component';
 import {DropdownModule} from 'primeng/dropdown';
 import {MessagesModule} from 'primeng/messages';
@@ -21,10 +19,12 @@ import {DialogModule} from 'primeng/dialog';
 import {InputTextModule} from 'primeng/primeng';
 import {CommonModule} from '@angular/common';
 import {AppRoutes} from './app.routing';
-
 import {AdminLayoutComponent} from './layouts/admin-layout/admin-layout.component';
 import {FormsModule} from '@angular/forms';
-
+import {OrderListModule} from 'primeng/orderlist';
+import {TabMenuModule} from 'primeng/tabmenu';
+import {TabViewModule} from 'primeng/tabview';
+import {ChipsModule} from 'primeng/chips';
 
 @NgModule({
   declarations: [
@@ -56,8 +56,11 @@ import {FormsModule} from '@angular/forms';
     FormsModule,
     DropdownModule,
     BrowserAnimationsModule,
-    CommonModule
-
+    CommonModule,
+    OrderListModule,
+    TabMenuModule,
+    TabViewModule,
+    ChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,23 +3,41 @@ import {Product} from '../../model/product.model';
 import {ProductService} from '../../service/product.service';
 import {Vendor} from '../../model/vendor.model';
 import {VendorService} from '../../service/vendor.service';
-import {Observable} from 'rxjs';
 import {MessageService} from 'primeng/api';
+
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss']
+  styleUrls: ['./product.component.scss'],
+  styles: [`
+        :host ::ng-deep button {
+            margin-right: .25em;
+        }
+
+        :host ::ng-deep .custom-toast .ui-toast-message {
+            color: #ffffff;
+            background: #FC466B;
+            background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);
+            background: linear-gradient(to right, #3F5EFB, #FC466B);
+        }
+
+        :host ::ng-deep .custom-toast .ui-toast-close-icon {
+            color: #ffffff;
+        }
+    `],
+  providers: [MessageService]
 })
 export class ProductComponent implements OnInit {
 
   displayDialog: boolean;
-  private product: Product = new Product(0, '', '', 0.00, new Vendor(0, '', '', '', '', '', '', '', '', ''), '');
+  private product: Product = new Product(0, '', '', 0.00, new Vendor(789456, '', '', '', '', '', '', '', '', ''), '');
   private products: Product[];
   selectedVendor: Vendor;
   private vendors: Vendor[];
   private vendor: Vendor = new Vendor(0, '', '', '', '', '', '', '', '', '');
   newVendor: boolean;
+
 
   newProduct: boolean;
   cols: any[];
@@ -29,7 +47,7 @@ export class ProductComponent implements OnInit {
   showDialog() {
     this.display = true;
   }
-  constructor(private productService: ProductService, private vendorService: VendorService) {
+  constructor(private productService: ProductService, private vendorService: VendorService, private messageService: MessageService) {
   }
 
   ngOnInit() {
@@ -61,16 +79,21 @@ export class ProductComponent implements OnInit {
 
   public addProduct() {
     // tslint:disable-next-line:max-line-length
-    this.products.push(new Product(this.product.id, this.product.reference, this.product.name, this.product.price, this.selectedVendor, this.product.unitemesure));
+    this.products.push(new Product(this.product.id, this.product.reference, this.product.name, this.product.price, this.product.vendor, this.product.unitemesure));
+    console.log(this.product.vendor);
     console.log(this.product);
     // tslint:disable-next-line:max-line-length
-    this.productService.createProduct(new Product(this.product.id, this.product.reference, this.product.name, this.product.price, this.selectedVendor, this.product.unitemesure)).subscribe();
+    this.productService.createProduct(new Product(this.product.id, this.product.reference, this.product.name, this.product.price, this.product.vendor, this.product.unitemesure)).subscribe();
+    this.messageService.add({severity: 'success', summary: 'Vendor Added successfuly', detail: ''});
   }
 
   public addProduct1() {
     // tslint:disable-next-line:max-line-length
     this.products.push(new Product(this.product.id, this.product.reference, this.product.name, this.product.price, this.product.vendor, this.product.unitemesure));
-    console.log(this.product);
+
+    // console.log(this.product);
+    // console.log(this.selectedVendor);
+    // console.log(this.vendor);
     // tslint:disable-next-line:max-line-length
     this.productService.createProduct(new Product(this.product.id, this.product.reference, this.product.name, this.product.price, this.product.vendor, this.product.unitemesure)).subscribe();
   }
@@ -81,21 +104,7 @@ export class ProductComponent implements OnInit {
     this.displayDialog = true;
   }
 
-  cloneProduct(c: Product): Product {
-    const product = new Product(0, '', '', null, null, '');
-    // tslint:disable-next-line:forin
-    for (const prop in c) {
-      product[prop] = c[prop];
-    }
-    return product;
-  }
-  onRowSelect(event) {
-    this.newVendor = false;
-    this.vendor = this.cloneCar(event.data);
-    this.displayDialog = true;
-  }
-
-  cloneCar(c: Vendor): Vendor {
+  cloneVendor(c: Vendor): Vendor {
     const vendor = new Vendor(0, '', '', '', '', '', '', '', '', '');
     // tslint:disable-next-line:forin
     for (const prop in c) {
@@ -103,6 +112,13 @@ export class ProductComponent implements OnInit {
     }
     return vendor;
   }
+  onRowSelect(event) {
+    this.newVendor = false;
+    this.product.vendor = this.cloneVendor(event.data);
+    this.displayDialog = true;
+  }
+  onSelectionChange(event) {
 
-
+      this.product.vendor = event.value[0];
+  }
 }

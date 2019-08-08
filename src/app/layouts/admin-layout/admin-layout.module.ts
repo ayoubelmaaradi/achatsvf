@@ -25,10 +25,18 @@ import {ChartsModule} from 'ng2-charts';
 import {ToastModule} from 'primeng/toast';
 import {VendorListComponent} from '../../pages/vendor-list/vendor-list.component';
 import {TableModule} from 'primeng/table';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { ButtonModule } from 'primeng/components/button/button';
-import {DialogModule, DropdownModule, InputTextModule, MessagesModule, RadioButtonModule} from 'primeng/primeng';
-import {BrowserModule} from '@angular/platform-browser';
+import {ButtonModule} from 'primeng/components/button/button';
+import {
+  ChipsModule,
+  DialogModule,
+  DropdownModule,
+  InputTextModule,
+  MessagesModule,
+  OrderListModule,
+  RadioButtonModule,
+  TabMenuModule,
+  TabViewModule
+} from 'primeng/primeng';
 
 @NgModule({
   imports: [
@@ -46,6 +54,10 @@ import {BrowserModule} from '@angular/platform-browser';
     ButtonModule,
     InputTextModule,
     DropdownModule,
+    OrderListModule,
+    TabMenuModule,
+    TabViewModule,
+    ChipsModule,
   ],
   declarations: [
   // we should add pages here
