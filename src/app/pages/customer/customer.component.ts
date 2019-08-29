@@ -20,7 +20,6 @@ export class CustomerComponent implements OnInit {
     this.customerService.createCustomer(new Customer(this.customer.id, this.customer.name, this.customer.tele,
       this.customer.email, this.customer.adress, this.customer.ice)).subscribe();
   }
-
   ngOnInit() {
   }
 

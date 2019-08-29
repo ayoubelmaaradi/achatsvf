@@ -27,16 +27,19 @@ import {VendorListComponent} from '../../pages/vendor-list/vendor-list.component
 import {TableModule} from 'primeng/table';
 import {ButtonModule} from 'primeng/components/button/button';
 import {
+  AutoCompleteModule,
+  CalendarModule,
   ChipsModule,
   DialogModule,
   DropdownModule,
   InputTextModule,
   MessagesModule,
-  OrderListModule,
-  RadioButtonModule,
+  OrderListModule, PanelModule, PickListModule,
+  RadioButtonModule, SpinnerModule,
   TabMenuModule,
   TabViewModule
 } from 'primeng/primeng';
+import {DataViewModule} from 'primeng/dataview';
 
 @NgModule({
   imports: [
@@ -58,6 +61,12 @@ import {
     TabMenuModule,
     TabViewModule,
     ChipsModule,
+    PanelModule,
+    DataViewModule,
+    PickListModule,
+    CalendarModule,
+    AutoCompleteModule,
+    SpinnerModule,
   ],
   declarations: [
   // we should add pages here

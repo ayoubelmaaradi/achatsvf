@@ -1,41 +1,210 @@
 <h1>Creating orders:</h1>
-<div class="row">
-  <div class="col-md-6">
-    <div class="card">
-      <div class="card-header">
-        <h3 class="card-title">Order create Form</h3>
-      </div>
-      <div class="card-body">
-        <label for="id">Id</label>
-        <input class="form-control" name="id" type="number" id="id" [(ngModel)]="order.id">
-        <label for="status">status</label>
-        <input class="form-control" name="status" type="text" id="status" [(ngModel)]="order.status">
-        <label for="dateOrdering">dateOrdering</label>
-        <input class="form-control" name="dateOrdering" type="text" id="dateOrdering"
-               [(ngModel)]="order.dateOrdering"><br>
-        <button class="btn btn-success" (click)="addOrder()">Add Order</button>
-      </div>
+<div class="col-md-12">
+  <div class="card card-user">
+    <div class="card-header">
+      <h5 class="card-title">Enter your company information :</h5>
     </div>
-  </div>
-  <div class="col-md-6">
-    <div class="card">
-      <div class="card-header"><h3 class="card-title">Orders detail</h3></div>
-      <div class="card-body">
-        <table class="table-bordered table">
-          <thead>
-          <th>id</th>
-          <th>status</th>
-          <th>DateOrdering</th>
-          </thead>
-          <tbody>
-          <tr *ngFor="let com of orders">
-            <td>{{ com.id }}</td>
-            <td>{{ com.status}}</td>
-            <td>{{ com.dateOrdering}}</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="card-body">
+      <form>
+        <div class="row">
+          <div class="col-md-6 pr-1">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Company" value="MED SOFTWORKS CONSULTING">
+            </div>
+          </div>
+          <div class="col-md-6 pl-1">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Email address" value="contact@med-softworks.com">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Address"  value="Boulevard Med V, Pavillion International T217, Technopark - Tanger">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 pr-1">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="City" value="Tangier">
+            </div>
+          </div>
+          <div class="col-md-4 px-1">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Country" value="Morocco">
+            </div>
+          </div>
+          <div class="col-md-4 pl-1">
+            <div class="form-group">
+              <input type="number" class="form-control" placeholder="Postal/ZIP Code" value="9000">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 pr-1">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Fax" value="(+212) 05.22.27.64.16">
+            </div>
+          </div>
+          <div class="col-md-4 px-1">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Mobile" value="(+212) 05.22.23.39.62">
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 </div>
+<div class="col-md-12">
+  <div class="card card-user">
+    <div class="card-header">
+      <h5 class="card-title">Enter vendors :</h5>
+    </div>
+    <div class="card-body">
+      <p-pickList [source]="sourceOrders" [target]="order.vendor" sourceHeader="Available" targetHeader="Selected" [responsive]="true" filterBy="name"
+                  dragdrop="true" sourceFilterPlaceholder="Search by name" targetFilterPlaceholder="Search by name" [sourceStyle]="{'height':'300px'}" [targetStyle]="{'height':'300px'}">
+        <ng-template let-car pTemplate="item">
+          <div class="ui-helper-clearfix">
+            <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{car.name}} - {{car.email}} - {{car.phone}}</div>
+          </div>
+        </ng-template>
+      </p-pickList>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-12">
+  <div class="card card-user">
+    <div class="card-header">
+      <h5 class="card-title">Enter purchase order information :</h5>
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Purchase Order" value="Purchase Order" [(ngModel)]="order.reference">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 pr-1">
+            <div class="form-group">
+              <p-calendar [(ngModel)]="order.dateOrdering" [showIcon]="true" [ngModelOptions]="{standalone: true}" placeholder="Ordering Date"></p-calendar>
+            </div>
+          </div>
+          <div class="col-md-6 pr-1">
+            <div class="form-group">
+              <p-calendar [(ngModel)]="order.deliveryDate" [showIcon]="true" [ngModelOptions]="{standalone: true}" placeholder="Delivery Date"></p-calendar>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="col-md-12">
+  <div class="card card-user">
+    <div class="card-header">
+      <h5 class="card-title">Enter the items you wish to order :</h5>
+    </div>
+    <div class="card-body">
+      <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+          <th>Product</th>
+          <th>Description</th>
+          <th>Price($)</th>
+          <th>Quantity</th>
+          <th>Amount($)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let field of fieldArray; let i = index">
+          <td>
+            <select [(ngModel)]="field.product" class="form-control">
+              <option *ngFor ="let produ of products" [ngValue]="produ">
+                {{field.product.name}}
+              </option>
+            </select>
+          </td>
+          <td>
+            <input  class="form-control" type="text" value="{{field.product.description}}" />
+          </td>
+          <td>
+            <input  class="form-control" type="text" value="{{field.product.price}}" />
+          </td>
+          <td>
+            <input  class="form-control" type="number" value="{{field.qte}}" />
+          </td>
+          <td>
+            <input pInputText value="{{field.product ? field.product.price * field.qte ||field.product : ''}}" type="number" size="30"/>
+          </td>
+          <td>
+            <button class="btn btn-default"  type="button" (click)="deleteFieldValue(i)">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <select [(ngModel)]="newAttribute.product" class="form-control">
+              <option *ngFor ="let produ of products" [ngValue]="produ" >
+                {{produ.name}}
+              </option>
+            </select>
+          </td>
+          <td>
+            <input pInputText value="{{newAttribute.product? newAttribute.product.description  ||newAttribute.product : ''}}" type="text" size="30"/>
+          </td>
+          <td>
+            <input pInputText value="{{newAttribute.product ? newAttribute.product.price  ||newAttribute.product : ''}}" type="number" size="30"/>
+          </td>
+          <td>
+            <p-spinner size="30" [(ngModel)]="newAttribute.qte"  ></p-spinner>
+          </td>
+          <td>
+            <input pInputText value="{{newAttribute.product ? newAttribute.product.price * newAttribute.qte ||newAttribute.product : ''}}" type="number" size="30"/>
+          </td>
+          <td>
+            <button class="btn btn-default" type="button" (click)="addFieldValue()">Add</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <div class="ui-g-12 ui-md-6">
+        <div class="ui-g-4">
+          SUBTOTAL :
+        </div>
+        <div class="ui-g-8">
+          <input type="number" class="form-control" value="{{total()}}" />
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-6">
+        <div class="ui-g-4">
+          Tax(%):
+        </div>
+        <div class="ui-g-8">
+          <input type="number" class="form-control" value="{{tax}}"  [(ngModel)]="tax"/>
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-6">
+        <div class="ui-g-4">
+          *Tax :
+        </div>
+        <div class="ui-g-8">
+          <input type="number" class="form-control"  value="{{total() * tax / 100}}" />
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-6">
+        <div class="ui-g-4">
+          Total :
+        </div>
+        <div class="ui-g-8">
+          <input type="number"  class="form-control" value="{{total()+ total() * tax / 100 }}" [(ngModel)]="order.total"/>
+        </div>
+      </div>
+      <button class="btn btn-default" type="button" (click)="okk()">Submit</button>
+    </div></div></div>
+

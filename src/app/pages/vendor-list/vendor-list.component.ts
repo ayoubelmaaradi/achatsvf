@@ -11,11 +11,8 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 export class VendorListComponent implements OnInit {
   displayDialog: boolean;
   vendor: Vendor = new Vendor(0, '', '', '', '', '', '', '', '', '');
-
   selectedVendor: Vendor;
-
   newCustomer: boolean;
-
   vendors: Vendor[];
 
   cols: any[];

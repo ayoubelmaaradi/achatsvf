@@ -4,6 +4,7 @@
       "id": 1,
       "reference": "T1245Uio",
       "name": "Tonico",
+      "price": "156",
       "vendor": {
         "id": 1,
         "name": "Tonoco-France",
@@ -16,7 +17,8 @@
         "email": "lionelmyska@gmail.com",
         "language": "english"
       },
-      "unitemesure": "cm"
+      "unitemesure": "cm",
+      "description": "un produit de niveau "
     },
     {
       "id": 2,
@@ -35,7 +37,28 @@
         "email": "bourase.bourase17@gmail.com",
         "language": ""
       },
-      "unitemesure": "L"
+      "unitemesure": "L",
+      "description": "un produit de niveau "
+    },
+    {
+      "id": 3,
+      "reference": "",
+      "name": "",
+      "price": 0,
+      "vendor": {
+        "id": 2,
+        "name": "ikram",
+        "type": "Individuel",
+        "adress": "",
+        "website": "ikram.ikoiko.com",
+        "phone": "061501401236",
+        "mobile": "+9874562312",
+        "fax": "",
+        "email": "bourase.bourase17@gmail.com",
+        "language": ""
+      },
+      "unitemesure": "",
+      "description": ""
     }
   ],
   "customers": [
@@ -101,7 +124,7 @@
   "vendors": [
     {
       "id": 1,
-      "name": "Tonoco-France",
+      "name": "Tonoco",
       "type": "individuel",
       "adress": "Ilot 26 B Bloc D1 Bureau N°1, Zone Franche d'Exportation de Tanger, Rte de Rabat Tanger",
       "website": "www.tonico-france.fr/brands/Tonico",

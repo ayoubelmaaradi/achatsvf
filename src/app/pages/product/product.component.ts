@@ -3,7 +3,7 @@ import {Product} from '../../model/product.model';
 import {ProductService} from '../../service/product.service';
 import {Vendor} from '../../model/vendor.model';
 import {VendorService} from '../../service/vendor.service';
-import {MessageService} from 'primeng/api';
+import {MessageService, SelectItem} from 'primeng/api';
 
 
 @Component({
@@ -30,8 +30,8 @@ import {MessageService} from 'primeng/api';
 })
 export class ProductComponent implements OnInit {
 
-  displayDialog: boolean;
-  private product: Product = new Product(0, '', '', 0.00, new Vendor(789456, '', '', '', '', '', '', '', '', ''), '');
+   displayDialog: boolean;
+  private product: Product = new Product(0, '', '', 0.00, new Vendor(789456, '', '', '', '', '', '', '', '', ''), '','');
   private products: Product[];
   selectedVendor: Vendor;
   private vendors: Vendor[];
@@ -43,6 +43,17 @@ export class ProductComponent implements OnInit {
   cols: any[];
   cols1: any[];
   display = false;
+  selectedProduct: Product;
+
+  displayo: boolean;
+
+  sortOptions: SelectItem[];
+
+  sortKey: string;
+
+  sortField: string;
+
+  sortOrder: number;
 
   showDialog() {
     this.display = true;
@@ -54,6 +65,11 @@ export class ProductComponent implements OnInit {
     this.productService.getAll().subscribe(data => {
       this.products = data;
     });
+    this.sortOptions = [
+      {label: 'Newest First', value: '!id'},
+      {label: 'Oldest First', value: 'id'},
+      {label: 'Name', value: 'name'}
+    ];
     this.cols = [
       {field: 'reference', header: 'reference'},
       {field: 'name', header: 'name'},
@@ -76,31 +92,52 @@ export class ProductComponent implements OnInit {
       this.vendors = data;
     });
   }
+  selectProduct(event: Event, product: Product) {
+    this.selectedProduct = product;
+    this.displayo = true;
+    event.preventDefault();
+  }
+
+  onSortChange(event) {
+    const value = event.value;
+
+    if (value.indexOf('!') === 0) {
+      this.sortOrder = -1;
+      this.sortField = value.substring(1, value.length);
+    } else {
+      this.sortOrder = 1;
+      this.sortField = value;
+    }
+  }
+
+  onDialogHide() {
+    this.selectedProduct = null;
+  }
 
   public addProduct() {
     // tslint:disable-next-line:max-line-length
-    this.products.push(new Product(this.product.id, this.product.reference, this.product.name, this.product.price, this.product.vendor, this.product.unitemesure));
+    this.products.push(new Product(this.product.id, this.product.reference, this.product.name, this.product.price, this.product.vendor, this.product.unitemesure, this.product.description));
     console.log(this.product.vendor);
     console.log(this.product);
     // tslint:disable-next-line:max-line-length
-    this.productService.createProduct(new Product(this.product.id, this.product.reference, this.product.name, this.product.price, this.product.vendor, this.product.unitemesure)).subscribe();
+    this.productService.createProduct(new Product(this.product.id, this.product.reference, this.product.name, this.product.price, this.product.vendor, this.product.unitemesure, this.product.description)).subscribe();
     this.messageService.add({severity: 'success', summary: 'Vendor Added successfuly', detail: ''});
   }
 
   public addProduct1() {
     // tslint:disable-next-line:max-line-length
-    this.products.push(new Product(this.product.id, this.product.reference, this.product.name, this.product.price, this.product.vendor, this.product.unitemesure));
+    this.products.push(new Product(this.product.id, this.product.reference, this.product.name, this.product.price, this.product.vendor, this.product.unitemesure, this.product.description));
 
     // console.log(this.product);
     // console.log(this.selectedVendor);
     // console.log(this.vendor);
     // tslint:disable-next-line:max-line-length
-    this.productService.createProduct(new Product(this.product.id, this.product.reference, this.product.name, this.product.price, this.product.vendor, this.product.unitemesure)).subscribe();
+    this.productService.createProduct(new Product(this.product.id, this.product.reference, this.product.name, this.product.price, this.product.vendor, this.product.unitemesure, this.product.description)).subscribe();
   }
 
    showDialogToAdd() {
     this.newProduct = true;
-    this.product = new Product(0, '', '', 0, null, '');
+    this.product = new Product(0, '', '', 0, null, '', '');
     this.displayDialog = true;
   }
 

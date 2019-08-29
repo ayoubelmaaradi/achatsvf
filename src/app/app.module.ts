@@ -25,7 +25,12 @@ import {OrderListModule} from 'primeng/orderlist';
 import {TabMenuModule} from 'primeng/tabmenu';
 import {TabViewModule} from 'primeng/tabview';
 import {ChipsModule} from 'primeng/chips';
-
+import {DataViewModule} from 'primeng/dataview';
+import {PickListModule} from 'primeng/picklist';
+import {CalendarModule} from 'primeng/calendar';
+import {AutoCompleteModule} from 'primeng/autocomplete';
+import {SpinnerModule} from 'primeng/spinner';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +65,14 @@ import {ChipsModule} from 'primeng/chips';
     OrderListModule,
     TabMenuModule,
     TabViewModule,
-    ChipsModule
+    ChipsModule,
+    DataViewModule,
+    PickListModule,
+    CalendarModule,
+    AutoCompleteModule,
+    SpinnerModule,
+    InputTextareaModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
